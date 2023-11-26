@@ -21,4 +21,5 @@ Below exists a Markdown Todo List of features I want to implement in this projec
 - [ ] Add A DB connection and pull TODOs 
 - [ ] Add a DB connection and push TODOs 
 - [ ] Handle Validation and Errors that may occur due to human input 
+- [ ] Add Modularity to the program so not everything is in the main file 
 - [ ] Allow for stopping the process
