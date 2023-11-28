@@ -10,6 +10,7 @@ struct TodoListItem {
 fn main() {
     let todo_list: Vec<TodoListItem> = create_tdl_item(); 
     print_menu(&todo_list); 
+    show_full_item_at_index(&todo_list, 2) 
 }
 
 fn print_menu(todo_list: &Vec<TodoListItem>) {
@@ -31,6 +32,18 @@ fn print_menu(todo_list: &Vec<TodoListItem>) {
     }
 
     println!(""); 
+}
+
+fn show_full_item_at_index(todo_list: &Vec<TodoListItem>, index: usize) {
+   let item: &TodoListItem = &todo_list[index]; 
+
+   println!("*******************************"); 
+   println!("|| Showing TDL Item {}       ||", index + 1);
+   println!("*******************************"); 
+
+   println!("> Title: {}", item.item_title); 
+   println!("> Description: {}", item.item_description); 
+   println!("> Has Been Completed: {}", item.item_completed); 
 }
 
 fn create_tdl_item() -> Vec<TodoListItem> {
