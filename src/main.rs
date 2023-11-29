@@ -7,6 +7,43 @@ struct TodoListItem {
   item_completed: bool, 
 }
 
+#[derive(Debug)]
+struct TodoList { 
+   id: String, 
+   todo_list_title: String, 
+   todo_list_items: Vec<TodoListItem>
+}
+
+impl TodoList {
+    fn new(todo_list_items: Vec<TodoListItem>, title: String, id: String) -> TodoList {
+        TodoList {
+           id: id, 
+           todo_list_title: title, 
+           todo_list_items: todo_list_items, 
+        }
+    }
+
+    fn get_item_at_index(&self, index: usize) {
+        let item = self.todo_list_items.get(index);  
+    }
+
+    fn update_item_at_index(&mut self, index: usize, new_item: TodoListItem) {
+       let item = self.todo_list_items.get(index);  
+    }
+
+    fn update_item_description(item: &mut TodoListItem, item_description: String) {
+       item.item_description = item_description; 
+    }
+
+    fn update_item_title(item: &mut TodoListItem, item_title: String) {
+        item.item_title = item_title; 
+    }
+
+    fn update_completed_status(item: &mut TodoListItem, completed_status: bool) {
+       item.item_completed = completed_status; 
+    }
+}
+
 fn main() {
     let todo_list: Vec<TodoListItem> = create_tdl_item(); 
     print_menu(&todo_list); 
