@@ -7,3 +7,8 @@ pub struct TodoListDriver {
    actions: Vec<String>,
 }
 
+impl TodoListDriver {
+    pub fn new(todo_list: TodoList) -> TodoListDriver {
+        let actions = vec!["create", "read", "update", "delete"];
+    }
+}
