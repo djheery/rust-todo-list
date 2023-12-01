@@ -42,6 +42,10 @@ impl TodoList {
     fn update_completed_status(item: &mut TodoListItem, completed_status: bool) {
        item.item_completed = completed_status; 
     }
+
+    fn add_new_item(&mut self, new_item: TodoListItem) {
+        self.todo_list_items.push(new_item); 
+    }
 }
 
 fn main() {
