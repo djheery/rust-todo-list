@@ -7,7 +7,7 @@ Below exists a Markdown Todo List of features I want to implement in this projec
 
 ## Project Todo list 
 
-- [ ] Print Menu 
+- [x] Print Menu 
 - [ ] Allow numerical selection of menu actions 
 - [ ] View List of todos 
 - [ ] Create a Todo 
