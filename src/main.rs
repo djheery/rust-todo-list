@@ -13,10 +13,15 @@ use crate::tdl_driver::TodoListDriver;
 
 fn main() {
     let todo_list_items: Vec<TodoListItem> = create_tdl_item(); 
+    let todo_list_items_2: Vec<TodoListItem> = create_tdl_item(); 
     let title = String::from("My Super TodoList"); 
+    let title2 = String::from("My Shitty TodoList"); 
     let id = String::from("123456"); 
+    let id2 = String::from("1234543"); 
     let todo_list = TodoList::new(todo_list_items, title, id);
-    let driver = TodoListDriver::new(todo_list);
+    let todo_list_2 = TodoList::new(todo_list_items_2, title2, id2); 
+    let lists = vec![todo_list, todo_list_2];
+    let driver = TodoListDriver::new(lists);
     driver.init();
 }
 

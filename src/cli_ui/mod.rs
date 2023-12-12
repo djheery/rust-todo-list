@@ -36,16 +36,22 @@ impl TodoListUI {
         println!(""); 
     }
 
-    pub fn menu(&self, actions: &Vec<String>) {
+    pub fn main_menu(&self, available_list_titles: Vec<&String>) {
        println!("***********************");  
-       println!("* Menu                *");
+       println!("* Select a Todo List  *");
        println!("***********************");  
-       
-       for i in 0..actions.len() {
-        println!("[{}] {}", i + 1, actions[i]); 
+      
+       for i in 0..available_list_titles.len() {
+          println!("[{}] {}", i + 1, available_list_titles[i]); 
        }
-
+       
+       println!("[{}] Create a new Todo List ", available_list_titles.len() + 1); 
+       self.print_close_program_flag();
        println!(" ");
+    }
+
+    pub fn todo_list_menu(&self, todo_list_title: &String) {
+        
     }
     
     pub fn print_tdl_item(&mut self, todo_list_item: &TodoListItem) {
@@ -59,24 +65,28 @@ impl TodoListUI {
         self.command_log.push("Printed Item".to_string());
     }
 
-    pub fn print_full_tdl(self, todo_list: &TodoList) {
+    pub fn print_full_tdl(&self, todo_list: &TodoList) {
         println!("{:#?}", todo_list);
     }
 
-    pub fn print_tdl_update(self, item_name: &String) {
+    pub fn print_tdl_update(&self, item_name: &String) {
       println!("Item Updated: {}", item_name);   
     }
 
-    pub fn print_tdl_item_deletion(self, item_name: &String) {
+    pub fn print_tdl_item_deletion(&self, item_name: &String) {
        println!("Item Deleted: {}", item_name);  
     }
 
-    pub fn print_tdl_item_addition(self, item_name: &String) {
+    pub fn print_tdl_item_addition(&self, item_name: &String) {
        println!("Item Added: {}", item_name);  
     }
 
-    pub fn print_tdl_item_completion(self, item_name: &String) {
+    pub fn print_tdl_item_completion(&self, item_name: &String) {
        println!("Item Completed: {}", item_name);  
+    }
+
+    pub fn print_close_program_flag(&self) {
+        println!("[0] Close Program "); 
     }
     
 }

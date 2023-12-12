@@ -68,6 +68,10 @@ impl TodoList {
      }
     }
 
+    pub fn get_title(&self) -> &String {
+       return &self.todo_list_title; 
+    }
+
     fn get_item_at_index(&self, index: usize) -> Result<&TodoListItem, &'static str> {
         let item = self.todo_list_items.get(index);  
 

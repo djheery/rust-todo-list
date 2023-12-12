@@ -3,14 +3,14 @@ use crate::cli_ui;
 
 #[derive(Debug)]
 pub struct TodoListDriver {
-   todo_list: TodoList, 
+   todo_list: Vec<TodoList>, 
    actions: Vec<String>,
    ui_type: String, 
    ui: cli_ui::TodoListUI,
 }
 
 impl TodoListDriver {
-    pub fn new(todo_list: TodoList) -> TodoListDriver {
+    pub fn new(todo_list: Vec<TodoList>) -> TodoListDriver {
         let actions: Vec<String> = vec![
             "Select Todo List".to_string(), 
             "Print Todo List".to_string(), 
@@ -27,7 +27,8 @@ impl TodoListDriver {
     }
 
     pub fn init(&self) {
+        let tdl_titles: Vec<&String> = self.todo_list.iter().map(|x| *&x.get_title()).collect();
         self.ui.print_splash();
-        self.ui.menu(&self.actions);
+        self.ui.main_menu(tdl_titles)
     }
 }
