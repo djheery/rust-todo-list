@@ -27,16 +27,16 @@ impl TodoListItem {
       }
     }
 
-    fn print_item_title(&self) {
-        println!("> Title: {}", self.item_title); 
+    pub fn get_title(&self) -> &String {
+        return &self.item_title;
     }
 
-    fn print_item_description(&self) {
-        println!("> Descripton: {}", self.item_description); 
+    pub fn get_description(&self) -> &String {
+        return &self.item_description; 
     }
 
-    fn print_item_completion_status(&self) {
-        println!("> Is Completed: {}", self.item_completed.to_string());
+    pub fn get_completion_status(&self) -> bool {
+        return self.item_completed; 
     }
 
     fn set_item_details(&mut self, field: ItemUpdateFields, update: String) {

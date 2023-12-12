@@ -1,9 +1,12 @@
 use crate::todo_list::TodoList;
+use crate::cli_ui::TodoListUI; 
 
 #[derive(Debug)]
 pub struct TodoListDriver {
    todo_list: TodoList, 
    actions: Vec<String>,
+   ui_type: String, 
+   ui: TodoListUI,
 }
 
 impl TodoListDriver {
@@ -17,7 +20,9 @@ impl TodoListDriver {
 
         return TodoListDriver {
             todo_list, 
-            actions
+            actions,
+            ui_type: "CLI".to_string(), 
+            ui: TodoListUI::new(),
         }; 
     }
 }
