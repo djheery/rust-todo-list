@@ -1,5 +1,3 @@
-mod todo_list; 
-
 use crate::todo_list::TodoList;
 
 pub struct TodoListDriver {
@@ -9,6 +7,16 @@ pub struct TodoListDriver {
 
 impl TodoListDriver {
     pub fn new(todo_list: TodoList) -> TodoListDriver {
-        let actions = vec!["create", "read", "update", "delete"];
+        let actions: Vec<String> = vec![
+            "create".to_string(), 
+            "read".to_string(), 
+            "update".to_string(), 
+            "delete".to_string()
+        ];
+
+        return TodoListDriver {
+            todo_list, 
+            actions
+        }; 
     }
 }
