@@ -17,9 +17,7 @@ fn main() {
     let id = String::from("123456"); 
     let todo_list = TodoList::new(todo_list_items, title, id);
     let driver = TodoListDriver::new(todo_list);
-    println!("{:#?}", driver); 
-
-
+    driver.init();
 }
 
 fn read_user_input() -> String {

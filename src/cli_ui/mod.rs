@@ -13,8 +13,8 @@ impl TodoListUI {
        }
     }
 
-    pub fn print_menu() {
-        
+    pub fn menu(self) {
+       println!("my menu");  
     }
     
     pub fn print_tdl_item(&mut self, todo_list_item: &TodoListItem) {

@@ -6,7 +6,7 @@ pub struct TodoListDriver {
    todo_list: TodoList, 
    actions: Vec<String>,
    ui_type: String, 
-   ui: cli_ui::TodoListUI,
+   pub ui: cli_ui::TodoListUI,
 }
 
 impl TodoListDriver {
@@ -24,5 +24,9 @@ impl TodoListDriver {
             ui_type: "CLI".to_string(), 
             ui: cli_ui::TodoListUI::new(),
         }; 
+    }
+
+    pub fn init(self) {
+        self.ui.menu();
     }
 }
