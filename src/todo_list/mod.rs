@@ -68,8 +68,13 @@ impl TodoList {
      }
     }
 
-    fn get_item_at_index(&self, index: usize) {
+    fn get_item_at_index(&self, index: usize) -> Result<&TodoListItem, &'static str> {
         let item = self.todo_list_items.get(index);  
+
+        match item {
+          Some(i) => return Ok(&item.unwrap()),
+          None => return Err("ITEM_NOT_FOUND") 
+        }
     }
 
     fn add_new_tdl_item(&mut self, item: TodoListItem) {

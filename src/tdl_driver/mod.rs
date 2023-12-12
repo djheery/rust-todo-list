@@ -1,5 +1,6 @@
 use crate::todo_list::TodoList;
 
+#[derive(Debug)]
 pub struct TodoListDriver {
    todo_list: TodoList, 
    actions: Vec<String>,

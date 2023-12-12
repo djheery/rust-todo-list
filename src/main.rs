@@ -7,6 +7,7 @@ mod tdl_driver;
 use std::io; 
 use crate::todo_list::TodoListItem; 
 use crate::todo_list::TodoList;
+use crate::tdl_driver::TodoListDriver;
 
 
 fn main() {
@@ -14,6 +15,10 @@ fn main() {
     let title = String::from("My Super TodoList"); 
     let id = String::from("123456"); 
     let todo_list = TodoList::new(todo_list_items, title, id);
+    let driver = TodoListDriver::new(todo_list);
+    println!("{:#?}", driver); 
+
+
 }
 
 fn read_user_input() -> String {
