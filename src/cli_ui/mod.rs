@@ -13,8 +13,39 @@ impl TodoListUI {
        }
     }
 
-    pub fn menu(self) {
-       println!("my menu");  
+    pub fn print_splash(&self) {
+        println!(" ");
+        println!("====================================================");
+        println!("|  ---------  /-------\\   ------\\    /-------\\     |"); 
+        println!("|  |__   __|  |  ---  |   | ---  |   |  ---  |     |"); 
+        println!("|    |   |    |  | |  |   | |  \\ |   |  | |  |     |"); 
+        println!("|    |   |    |  | |  |   | |  | |   |  | |  |     |"); 
+        println!("|    |   |    |  | |  |   | |  / |   |  | |  |     |"); 
+        println!("|    |   |    |  ---  |   | ---  |   |  ---  |     |");
+        println!("|    |___|    \\_______/   |______/    \\______/     |");
+        println!("|                                                  |");
+        println!("====================================================");
+        println!(""); 
+        println!("This is my cli todo application written in Rust."); 
+        println!("It is simply a test application to be expanded upon to try programming in a new language"); 
+        println!(""); 
+        println!("Code By: Daniel Heery"); 
+        println!("I hope you appreciate the shitty splash title. Yes I know.... it was a complete waste of time"); 
+        println!(""); 
+        println!("Application Start..."); 
+        println!(""); 
+    }
+
+    pub fn menu(&self, actions: &Vec<String>) {
+       println!("***********************");  
+       println!("* Menu                *");
+       println!("***********************");  
+       
+       for i in 0..actions.len() {
+        println!("[{}] {}", i + 1, actions[i]); 
+       }
+
+       println!(" ");
     }
     
     pub fn print_tdl_item(&mut self, todo_list_item: &TodoListItem) {
@@ -28,23 +59,23 @@ impl TodoListUI {
         self.command_log.push("Printed Item".to_string());
     }
 
-    pub fn print_full_tdl(todo_list: &TodoList) {
+    pub fn print_full_tdl(self, todo_list: &TodoList) {
         println!("{:#?}", todo_list);
     }
 
-    pub fn print_tdl_update(item_name: &String) {
+    pub fn print_tdl_update(self, item_name: &String) {
       println!("Item Updated: {}", item_name);   
     }
 
-    pub fn print_tdl_item_deletion(item_name: &String) {
+    pub fn print_tdl_item_deletion(self, item_name: &String) {
        println!("Item Deleted: {}", item_name);  
     }
 
-    pub fn print_tdl_item_addition(item_name: &String) {
+    pub fn print_tdl_item_addition(self, item_name: &String) {
        println!("Item Added: {}", item_name);  
     }
 
-    pub fn print_tdl_item_completion(item_name: &String) {
+    pub fn print_tdl_item_completion(self, item_name: &String) {
        println!("Item Completed: {}", item_name);  
     }
     

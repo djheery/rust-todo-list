@@ -6,16 +6,16 @@ pub struct TodoListDriver {
    todo_list: TodoList, 
    actions: Vec<String>,
    ui_type: String, 
-   pub ui: cli_ui::TodoListUI,
+   ui: cli_ui::TodoListUI,
 }
 
 impl TodoListDriver {
     pub fn new(todo_list: TodoList) -> TodoListDriver {
         let actions: Vec<String> = vec![
-            "create".to_string(), 
-            "read".to_string(), 
-            "update".to_string(), 
-            "delete".to_string()
+            "Select Todo List".to_string(), 
+            "Print Todo List".to_string(), 
+            "Eat Shit".to_string(), 
+            "Fuck Off".to_string()
         ];
 
         return TodoListDriver {
@@ -26,7 +26,8 @@ impl TodoListDriver {
         }; 
     }
 
-    pub fn init(self) {
-        self.ui.menu();
+    pub fn init(&self) {
+        self.ui.print_splash();
+        self.ui.menu(&self.actions);
     }
 }
